@@ -1,0 +1,79 @@
+.profile-image {
+    margin-left: 6rem;
+}
+
+.top-marg {
+    padding-top: 2.3rem;
+}
+
+.name {
+    margin-bottom: 0rem;
+}
+
+.profession {
+    margin-top: -2rem !important;
+    font-weight: 500;
+    color: #265BC4;
+}
+
+.icon-clr {
+    color: gray;
+    font-size: 18px !important;
+
+}
+
+.city {
+    color: gray;
+    font-size: 14px;
+}
+
+.list-st {
+    list-style: none;
+}
+
+.Contact-info {
+    font-size: 12px;
+}
+
+.clr-blue {
+    color: #265BC4;
+    margin-left: 4rem;
+}
+
+.clr-black {
+    color: black;
+    margin-left: 3.7rem;
+    font-size: 14px;
+    margin-top: 2rem;
+    font-weight: 400;
+}
+
+.font-12 {
+    font-size: 13px;
+}
+
+.clr-email {
+    color: #265BC4;
+    margin-left: 4.5rem;
+}
+
+.Personal-info {
+    margin-top: 3rem !important;
+    font-size: 12px;
+}
+
+.clr-birthday {
+    color: black;
+    margin-left: 3.4rem;
+}
+
+.clr-gender {
+    color: black;
+    margin-left: 3.9rem;
+}
+.follow{
+margin-left: 0.4rem;
+}
+.message{
+    margin-left: 0.7rem;
+}

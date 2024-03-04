@@ -1,0 +1,15 @@
+.first_head {
+  font-weight: 600;
+}
+
+.first_subhead {
+  margin-top: -10px;
+  letter-spacing: 0.06px;
+  color: #858585;
+  opacity: 0.7;
+  font-weight: 500;
+}
+
+.main_Header {
+  width: 37% !important;
+}

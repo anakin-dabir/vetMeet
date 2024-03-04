@@ -1,0 +1,124 @@
+/* Dashboard card */
+
+.dashboard {
+    padding-top: 1.5rem;
+}
+
+.circle_icon {
+    background: #0058FF1A;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    padding-top: 17px;
+    padding-left: 18px;
+    padding-right: 8px;
+    color: #265BC4;
+}
+
+.dashboardCard {
+    width: 300px;
+    height: 150px;
+}
+
+.dashboard_cards {
+    margin-right: -3rem;
+}
+
+.dashboard_boxes {
+    padding-right: 0.4rem;
+}
+
+.dashboardBox1 {
+    height: 440px;
+}
+
+.dashboardBox2 {
+    height: 440px;
+}
+
+
+/* Counsaltants */
+
+.consultants {
+    max-height: 250px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.consultants::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Dashboard */
+
+.days_btn {
+    box-shadow: 3px 3px 6px #00000029;
+    border-radius: 4px;
+    width: 50px;
+    height: 35px;
+    /* margin-left: 1.5rem; */
+}
+
+.weeks_btn {
+    box-shadow: 3px 3px 6px #00000029;
+    border-radius: 4px;
+    width: 59px;
+    height: 35px;
+    /* margin-left: 0.5rem; */
+}
+
+.months_btn {
+    box-shadow: 3px 3px 6px #00000029;
+    border-radius: 4px;
+    width: 69px;
+    height: 35px;
+}
+
+.dashboard_btns {
+    padding-left: 0rem;
+    padding-right: 0rem;
+}
+
+.calender {
+    border-radius: 4px;
+    width: 187px;
+    height: 36px;
+    border: 1px solid #D7DBEC;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #265BC4;
+    color: white;
+}
+
+
+/* Simple Map */
+
+.map-selected {
+    fill: #E3DA37;
+}
+
+.map-unselected {
+    fill: #699EAA;
+}
+
+.map-selected:hover,
+.map-unselected:hover {
+    cursor: pointer;
+}
+
+
+/* Job cards */
+
+.job_card {
+    width: 743px;
+    height: 125px;
+}
+
+.job_logo {
+    width: 80px;
+    padding-left: 16px;
+    padding-top: 8px;
+}
