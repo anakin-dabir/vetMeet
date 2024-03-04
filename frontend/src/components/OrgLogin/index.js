@@ -33,7 +33,6 @@ const LoginForm = () => {
 
   const onChange = onChangeGeneric(creds, setCreds);
 
-  //******** SUBMIT LOGIN FORM
   const handleSubmit = async e => {
     setLoading(true);
 
@@ -44,9 +43,7 @@ const LoginForm = () => {
     if (res.data.status === "success") {
       setLoading(false);
       Cookies.set("jwt", res.data.token);
-      // const decoded=jwt_decode( res.data.web_token );
 
-      // console.log( decoded );
       localStorage.setItem("user", JSON.stringify(res.data.data.user));
 
       formRef.current.resetFields();
@@ -62,10 +59,6 @@ const LoginForm = () => {
       enqueueSnackbar(res.data.message, { variant: "error" });
     }
   };
-
-  // function handleClick() {
-  //   setLoading( true );
-  // }
 
   return (
     <div className="row">

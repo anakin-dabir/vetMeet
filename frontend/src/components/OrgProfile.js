@@ -55,16 +55,7 @@ const OrgProfile = () => {
   let data;
 
   console.log(!isLoading && queryData);
-  // for (let i = 0; i < 5; i++) {
-  //   data.push({
-  //     key: i,
-  //     name: `Edward King ${i}`,
-  //     time: "13 july 2020",
-  //     eventType: `London Park`,
-  //     stars: "⭐ 2200",
 
-  //   });
-  // }
   return (
     <>
       {!isLoading && (

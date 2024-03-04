@@ -1,76 +1,54 @@
 import "./share.css";
-import {PermMedia, Label,Room, EmojiEmotions} from "@material-ui/icons"
-import User from "./user.png"
-import { Form } from 'antd';
+import { PermMedia, Label, Room, EmojiEmotions } from "@material-ui/icons";
+import User from "./user.png";
+import { Form } from "antd";
 import { useRef } from "react";
 import { useContext, useState } from "react";
 import AppContext from "../../context/appState/AppContext";
-import { styled } from '@mui/material/styles';
-import Button from '@mui/material/Button';
+import { styled } from "@mui/material/styles";
+import Button from "@mui/material/Button";
 import { useCreatePostMutation } from "../../services/nodeAPI";
-import { VariantType, useSnackbar } from 'notistack';
+import { VariantType, useSnackbar } from "notistack";
 
-
-const Input=styled( 'input' )( {
-  display: 'none',
-} );
+const Input = styled("input")({
+  display: "none",
+});
 export default function Share() {
+  const formRef = useRef(null);
+  const { enqueueSnackbar } = useSnackbar();
 
+  const [createPost] = useCreatePostMutation();
 
-  const formRef=useRef( null );
-  const { enqueueSnackbar }=useSnackbar();
+  const user = JSON.parse(localStorage.getItem("user"));
 
-  const [ createPost ]=useCreatePostMutation();
+  const [creds, setCreds] = useState({ description: "", veteran: user._id });
+  const { onChangeGeneric } = useContext(AppContext);
 
+  const onChange = onChangeGeneric(creds, setCreds);
 
-
-  const user=JSON.parse( localStorage.getItem( 'user' ) )
-
-  const [ creds, setCreds ]=useState( { description: "", veteran: user._id } );
-  const { onChangeGeneric }=useContext( AppContext );
-
-
-  const onChange=onChangeGeneric( creds, setCreds );
-
-
-  const handleSubmit=async ( e ) => {
-
+  const handleSubmit = async e => {
     e.preventDefault();
 
+    let fData = new FormData();
 
+    fData.append("description", creds.description);
+    fData.append("images", e.target.uploadFile.files[0]);
 
+    const res = await createPost(fData);
 
-    let fData=new FormData();
+    console.log(res);
 
-
-    fData.append( 'description', creds.description )
-    fData.append( 'images', e.target.uploadFile.files[ 0 ] )
-
-    const res=await createPost( fData );
-
-
-    console.log( res );
-
-    if ( res.data.status==='success' ) {
-      setCreds( { description: "" } );
-      enqueueSnackbar( "Post has been created!", { variant: 'success' } );
+    if (res.data.status === "success") {
+      setCreds({ description: "" });
+      enqueueSnackbar("Post has been created!", { variant: "success" });
       formRef.current.reset();
-
-
+    } else {
+      enqueueSnackbar("something went wrong!", { variant: "error" });
     }
-    else {
-      enqueueSnackbar( "something went wrong!", { variant: 'error' } );
-
-    }
-
-
-
-  }
-
+  };
 
   return (
     <form ref={formRef} onSubmit={handleSubmit}>
-
       <div className="share">
         <div className="shareWrapper">
           <div className="shareTop">
@@ -90,22 +68,26 @@ export default function Share() {
                 <PermMedia htmlColor="tomato" className="shareIcon" />
                 <span className="shareOptionText">Photo or Video</span>
 
-                <label htmlFor="contained-button-file" className="inputFieldFile" >
-                  <Input accept="image/*" name="uploadFile" id="contained-button-file" multiple type="file" />
+                <label htmlFor="contained-button-file" className="inputFieldFile">
+                  <Input
+                    accept="image/*"
+                    name="uploadFile"
+                    id="contained-button-file"
+                    multiple
+                    type="file"
+                  />
                   <Button variant="contained" component="span">
                     Upload
                   </Button>
                 </label>
-
-
               </div>
             </div>
-            <button className="shareButton" type="submit">Post</button>
+            <button className="shareButton" type="submit">
+              Post
+            </button>
           </div>
         </div>
       </div>
-
     </form>
-
   );
 }

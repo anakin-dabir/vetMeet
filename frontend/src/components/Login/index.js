@@ -33,7 +33,6 @@ const LoginForm = () => {
 
   const onChange = onChangeGeneric(creds, setCreds);
 
-  //******** SUBMIT LOGIN FORM
   const handleSubmit = async e => {
     setLoading(true);
     try {
@@ -45,9 +44,6 @@ const LoginForm = () => {
         localStorage.setItem("user", JSON.stringify(res.data.data.user));
         setLoading(false);
         Cookies.set("jwt", res.data.token);
-        // const decoded=jwt_decode( res.data.web_token );
-
-        // console.log( decoded );
 
         formRef.current.resetFields();
         setCreds({ email: "", password: "" });
@@ -63,10 +59,6 @@ const LoginForm = () => {
       }
     } catch (e) {}
   };
-
-  // function handleClick() {
-  //   setLoading( true );
-  // }
 
   return (
     <div className="row">

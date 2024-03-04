@@ -38,11 +38,11 @@ const Event = () => {
   return (
     <>
       {!isLoading && (
-        <div className='row top-marg ml-4'>
+        <div className="row top-marg ml-4">
           {localStorage.getItem("eventType") === "cv" ? (
-            <div className='col-md-4'>
-              <img src={user} alt='user' className='profile-image' />
-              <Divider orientation='mid' plain>
+            <div className="col-md-4">
+              <img src={user} alt="user" className="profile-image" />
+              <Divider orientation="mid" plain>
                 Invite People
               </Divider>
               {localStorage.getItem("userType") === "veteran" ? (
@@ -52,60 +52,52 @@ const Event = () => {
               )}
             </div>
           ) : (
-            <div className='col-md-4'>
-              <img src={user} alt='user' className='profile-image' />
+            <div className="col-md-4">
+              <img src={user} alt="user" className="profile-image" />
             </div>
           )}
 
-          <div className='col-md-8'>
-            <h2 className='name'>
-              {data?.data.name} <AddLocationAltIcon className='icon-clr' />
-              <small className='city'>{"Lahore"}</small>
+          <div className="col-md-8">
+            <h2 className="name">
+              {data?.data.name} <AddLocationAltIcon className="icon-clr" />
+              <small className="city">{"Lahore"}</small>
             </h2>
-            <small className='profession'>{data?.data.eventType}</small>
-            <h5 className='mt-4'>{data?.data.eventStars} ⭐</h5>
+            <small className="profession">{data?.data.eventType}</small>
+            <h5 className="mt-4">{data?.data.eventStars} ⭐</h5>
 
             <div>
-              <p className='lorem'>
+              <p className="lorem">
                 {" "}
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate tenetur itaque
                 similique optio soluta! Doloribus iste sed odit quod incidunt earum! Quam beatae
                 eligendi dignissimos quis voluptatem impedit! Ducimus, tenetur?
               </p>
-              <Button type='primary' shape='round' icon={<PersonAddIcon size='large' />}>
+              <Button type="primary" shape="round" icon={<PersonAddIcon size="large" />}>
                 <a
                   href={data?.data.eventLink}
                   disabled={localStorage.getItem("userType") == "community" ? true : false}
-                  target='_blank'
-                  className='follow text-white'
+                  target="_blank"
+                  className="follow text-white"
                   onClick={handleJoin}
                 >
                   Join
                 </a>
               </Button>
             </div>
-            {/* <div className='d-flex mt-4'>
-    <Button type="primary" shape="round" icon={<PersonAddIcon  size="large"/>}>
-      <span className='follow'>Follow</span>
-      </Button>
-       <Button type="danger" shape="round" icon={<MessageIcon  size="large"/>} className="message">
-      <span className='follow'>Message</span>
-      </Button>
-        </div> */}
             <Divider plain>About</Divider>
-            <small className='Contact-info'>Event Information</small>
-            <h6 className='mt-2 font-12'>
-              Time: <span className='clr-blue'>{data?.data.eventTime}</span>
+            <small className="Contact-info">Event Information</small>
+            <h6 className="mt-2 font-12">
+              Time: <span className="clr-blue">{data?.data.eventTime}</span>
             </h6>
-            <h6 className='font-12'>
+            <h6 className="font-12">
               EventLink:
-              <span className='clr-black'>
-                <a href={data?.data.eventLink} target='_blank' rel='noopener noreferrer'></a>
+              <span className="clr-black">
+                <a href={data?.data.eventLink} target="_blank" rel="noopener noreferrer"></a>
                 {data?.data.eventLink}
               </span>
             </h6>
-            <h6 className='mt-4 font-12'>
-              location: <span className='clr-email'>lahore</span>
+            <h6 className="mt-4 font-12">
+              location: <span className="clr-email">lahore</span>
             </h6>
           </div>
         </div>

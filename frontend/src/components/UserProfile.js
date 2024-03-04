@@ -25,10 +25,10 @@ const Profile = () => {
         </div>
         <div className="col-md-8">
           <h2 className="name">
-            Numan Anees <AddLocationAltIcon className="icon-clr" />
+            Hilab Ladees <AddLocationAltIcon className="icon-clr" />
             <small className="city">Lahore</small>
           </h2>
-          <small className="profession">Software Engineer</small>
+          <small className="profession">Doctor</small>
           <h5 className="mt-4">0 ⭐</h5>
           <h5>
             <SupervisedUserCircleOutlinedIcon /> 0 followers 0 following
@@ -49,15 +49,15 @@ const Profile = () => {
           <Divider plain>About</Divider>
           <small className="Contact-info">Contact Information</small>
           <h6 className="mt-2 font-12">
-            Phone: <span className="clr-blue">+923310145083</span>
+            Phone: <span className="clr-blue">+xxx12382961423</span>
           </h6>
           <h6 className="mt-4 font-12">
-            Email: <span className="clr-email">user44@gmail.com</span>
+            Email: <span className="clr-email">mariko@gmail.com</span>
           </h6>
           <div className="mt-4"></div>
           <small className="Personal-info">Personal Information</small>
           <h6 className="mt-2 font-12">
-            Birthday: <span className="clr-birthday">July 14, 2001</span>
+            Birthday: <span className="clr-birthday">July 03, 1800</span>
           </h6>
           <h6 className="mt-2 font-12">
             Gender: <span className="clr-gender">Male</span>

@@ -43,18 +43,13 @@ const SignUpForm = () => {
 
   const onChange = onChangeGeneric(creds, setCreds);
 
-  //******** SUBMIT Signup FORM
   const handleSubmit = async values => {
     setLoading(true);
 
-    // CHECKING PASSWORDS are same
     if (creds.password !== creds.passwordConfirm) {
       setLoading(false);
       enqueueSnackbar("Password and Confirm Password are not same", { variant: "error" });
-    }
-
-    // Submitting form
-    else {
+    } else {
       const obj = {
         ...values,
         hobbies: values.hobbies.toLowerCase().split(","),
@@ -83,7 +78,7 @@ const SignUpForm = () => {
         }, 2000);
       } else {
         setLoading(false);
-        // enqueueSnackbar( res.data.message, { variant: 'error' } );
+
         enqueueSnackbar("something went wrong!", { variant: "error" });
       }
     }

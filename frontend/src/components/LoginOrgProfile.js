@@ -60,20 +60,11 @@ const OrgProfile = () => {
       <div className="row top-marg ml-4">
         <div className="col-md-4">
           <img src={user} alt="user" className="profile-image" />
-          {/* <Divider orientation="left" plain>
-            hobbies
-      </Divider>
-          <ul className='list-st'>
-            <li>Sky Diving</li>
-            <li>Swimming</li>
-            <li>Cricket</li>
-            <li>Football</li>
-        </ul> */}
         </div>
         <div className="col-md-8">
           <h2 className="name">
-            Numan Anees <AddLocationAltIcon className="icon-clr" />
-            <small className="city">Lahore</small>
+            Hilab Ladees <AddLocationAltIcon className="icon-clr" />
+            <small className="city">Kiranchi</small>
           </h2>
           <small className="profession">Organization type</small>
           <div>
@@ -84,21 +75,14 @@ const OrgProfile = () => {
               eligendi dignissimos quis voluptatem impedit! Ducimus, tenetur?
             </p>
           </div>
-          {/* <div className='d-flex mt-4'>
-    <Button type="primary" shape="round" icon={<PersonAddIcon  size="large"/>}>
-      <span className='follow'>Follow</span>
-      </Button>
-       <Button type="danger" shape="round" icon={<MessageIcon  size="large"/>} className="message">
-      <span className='follow'>Message</span>
-      </Button>
-        </div> */}
+
           <Divider plain>About</Divider>
           <small className="Contact-info">Contact Information</small>
           <h6 className="mt-2 font-12">
-            Phone: <span className="clr-blue">+923310145083</span>
+            Phone: <span className="clr-blue">+xxs1923131313</span>
           </h6>
           <h6 className="mt-4 font-12">
-            Email: <span className="clr-email">user44@gmail.com</span>
+            Email: <span className="clr-email">mariko@gmail.com</span>
           </h6>
           <div className="mt-4"></div>
           <div className="mb-4"></div>

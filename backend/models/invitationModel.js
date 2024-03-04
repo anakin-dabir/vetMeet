@@ -1,95 +1,54 @@
-const mongoose=require( 'mongoose' );
-const validator=require( "validator" ); 
+const mongoose = require("mongoose");
+const validator = require("validator");
 
+const InvitationSchema = new mongoose.Schema(
+  {
+    eventID: {
+      type: mongoose.Schema.ObjectId,
+      ref: "Event",
+    },
 
-//Optimize:  ********* Invitation Modal Schema ***********
-const InvitationSchema=new mongoose.Schema( {
-  eventID:{
-    type: mongoose.Schema.ObjectId,  
-    ref:'Event',
-} ,
-
-  veteranID:{
-    type: mongoose.Schema.ObjectId,  
-    ref:'Veteran',
+    veteranID: {
+      type: mongoose.Schema.ObjectId,
+      ref: "Veteran",
+    },
+    sendingTime: {
+      type: Date,
+      default: Date.now(),
+    },
+  },
+  {
+    toJSON: {
+      virtuals: true,
+    },
+    toObject: {
+      virtuals: true,
+    },
   }
-,
-sendingTime:{
-  type:Date,
-  default:Date.now()
-}
+);
 
+InvitationSchema.pre("save", async function (next) {
+  next();
+});
 
-}, {
-  // TO SEE VIRTUAL FIELDS 
-  toJSON: {
-    virtuals: true
-  },
-  toObject: {
-    virtuals: true
-  },
-
-} );
-
-
-
-
-//Todo: ********* Adding virtual properties ***********
-// *** Whatever return will be set to virtual property value
-// InvitationSchema.virtual( 'nickName' ).get( function () {
-//   return this.name.slice(0,3);
-// } )
-
-
-
-
-
-//Todo: ********* Document/query/aggregation middlewares ***********
-
-// **** DOCUMENT MIDDLEWARE: runs before .save() and .create()
-InvitationSchema.pre( 'save', async function ( next ) {
-  // HERE 'this' keyword === current document 
-
+InvitationSchema.pre(/^find/, async function (next) {
+  this.populate({ path: "eventID" });
 
   next();
-} )
+});
 
-
-// **** QUERRY MIDDLEWARE: runs before executing any find query
-InvitationSchema.pre( /^find/, async function ( next ) {
-  // HERE 'this' keyword === querry Obj
-
-   this.populate({path:"eventID"})
-
+InvitationSchema.pre("aggregate", async function (next) {
   next();
-} )
+});
 
-
-// **** AGGREGATION MIDDLEWARE: runs before executing Agrregation pipepline
-InvitationSchema.pre( 'aggregate', async function ( next ) {
-    // HERE 'this' keyword === aggregation Obj
-
-
-
-  next();
-} )
-
-
-
-
-//TODO:  ********* instance methods of documents ***********
-
-
-InvitationSchema.methods.checkName=async function () {
-  return ""; // return anything based on logic
-}
-
-
-InvitationSchema.statics.deleteById = function(_id) {
-  return this.deleteOne({ _id: _id })
+InvitationSchema.methods.checkName = async function () {
+  return "";
 };
 
-const Invitation=mongoose.model( 'Invitation', InvitationSchema );
+InvitationSchema.statics.deleteById = function (_id) {
+  return this.deleteOne({ _id: _id });
+};
 
+const Invitation = mongoose.model("Invitation", InvitationSchema);
 
-module.exports=Invitation;
+module.exports = Invitation;

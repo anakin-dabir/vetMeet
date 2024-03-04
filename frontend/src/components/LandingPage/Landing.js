@@ -102,8 +102,6 @@ const Landing = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
               <li className="nav-item mx-4">
-                {/* <a className="nav-link nav_active nav_links" href="">Home</a> */}
-
                 <Link
                   activeClass="nav_active"
                   className="nav-link nav_links"
@@ -117,7 +115,6 @@ const Landing = () => {
                 </Link>
               </li>
               <li className="nav-item mx-4">
-                {/* <a className="nav-link nav_active nav_links" href="/">Services</a> */}
                 <Link
                   activeClass="nav_active"
                   className="nav-link nav_links"
@@ -130,22 +127,8 @@ const Landing = () => {
                   Services
                 </Link>
               </li>
-              {/* <li className="nav-item mx-4"> */}
-              {/* <a className="nav-link nav_active nav_links" href="/">Abous us</a> */}
-              {/* <Link
-                  activeClass="nav_active"
-                  className="nav-link nav_links"
-                  to="about_us"
-                  spy={true}
-                  smooth={true}
-                  offset={-90}
-                  duration={500}
-                >
-                  About us
-                </Link> */}
-              {/* </li> */}
+
               <li className="nav-item mx-4">
-                {/* <a className="nav-link nav_active nav_links" href="/">Contact us</a> */}
                 <Link
                   activeClass="nav_active"
                   className="nav-link nav_links"
@@ -166,10 +149,6 @@ const Landing = () => {
           </div>
         </div>
       </nav>
-
-      {
-        //************  LANDING CONTENT **************
-      }
 
       <div className="container landing" id="home">
         <div className="row">
@@ -212,10 +191,6 @@ const Landing = () => {
         </div>
       </div>
 
-      {
-        //************  SERVICE SECTION **************
-      }
-
       <div id="services">
         <div className="left_black_img">
           <img
@@ -251,9 +226,6 @@ const Landing = () => {
         </div>
       </div>
 
-      {
-        //************  GET STARTED SECTION **************
-      }
       <div className="candidate_bg">
         <div className="container my-5">
           <div id="section3">
@@ -285,9 +257,6 @@ const Landing = () => {
         </div>
       </div>
 
-      {
-        //************  CONTACT US **************
-      }
       <div className=" container-fluid contact_us" id="contact_us">
         <div className="row mainRow">
           <div className="col-6 contact_us_left">
@@ -326,16 +295,10 @@ const Landing = () => {
         </div>
       </div>
 
-      {
-        //************  FOOTER **************
-      }
       <footer className=" text-lg-start">
         <div className="container text-md-start">
-          {/* Grid row */}
           <div className="row">
-            {/* Grid column */}
             <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-              {/* Content */}
               <img src={require("./../../img/Group 1627.png")} alt="linkdin" className="w-50" />
               <p className="pt-4 footer_text">
                 Lorem ipsum dolor sit amet, consetetur s sed diam nonumy eirmod tempor invidunt ut
@@ -350,19 +313,13 @@ const Landing = () => {
                 <p className>contact@vetmeet.com</p>
               </div>
             </div>
-            {/* Grid column */}
-            {/* Grid column */}
             <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-              {/* Links */}
               <h6 className=" fw-bold mb-4">Navigations</h6>
               <p className="pt-2">Home</p>
               <p>Contact us</p>
               <p>FAQ</p>
             </div>
-            {/* Grid column */}
-            {/* Grid column */}
             <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-              {/* Links */}
               <div className="follow_us">
                 <p className="fw-bold" style={{ marginBottom: "0rem !important" }}>
                   Follow us
@@ -374,9 +331,7 @@ const Landing = () => {
                 />
               </div>
             </div>
-            {/* Grid column */}
           </div>
-          {/* Grid row */}
         </div>
         <div className="last_footer text-muted">
           <hr />
