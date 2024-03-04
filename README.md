@@ -3,7 +3,7 @@
 </p>
 <p align="center">
 <img src="https://img.shields.io/badge/react-v17.0.2-teal" />
-<img src="https://img.shields.io/badge/react-redux-v7.2.8-purple" />
+<img src="https://img.shields.io/badge/redux-v7.2.8-purple" />
 <img src="https://img.shields.io/badge/express-v4.17.1-blue" />
 <img src="https://img.shields.io/badge/mongoose-v6.0.8-darkgreen" />
 </p>
